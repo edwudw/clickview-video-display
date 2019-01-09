@@ -43,3 +43,8 @@
 	width: 75%;
 	display: inline-block;
 }
+
+/*Hide Back Button unless view by folder is selected*/
+#backButton {
+	display: none;
+}

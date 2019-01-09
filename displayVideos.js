@@ -18,7 +18,7 @@ $(document).ready(function () {
 				}
 			}
 		}
-	})
+	});
 });
 
 // Adds each video to the table displayed
