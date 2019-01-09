@@ -21,6 +21,16 @@ $(document).ready(function () {
 	});
 });
 
+// Converts duration stored into a readable format
+function getDuration(duration) {
+	duration = duration / 1000; // convert from milliseconds to seconds
+	if (duration < 60) {
+		return String(duration) + " secs"; // Return seconds
+	} else {
+		return String(Math.floor(duration / 60)) + " mins"; // Return minutes
+	}
+}
+
 // Adds each video to the table displayed
 function addToTable(video) {
 	$tableBody = $("#displayTableBody");
@@ -28,6 +38,7 @@ function addToTable(video) {
 					     <td><img class='thumbnail' src=" + video['thumbnail'] + " alt='Video Thumbnail'></td>\
 					     <td>" + video['name'] + "</td>\
 					     <td>" + video['description'] + "</td>\
+					     <td>" + getDuration(video['duration']) + "</td>\
 					     <td><button type='button' class='btn btn-success'>Play</button></td>\
 					   </tr>");
 
