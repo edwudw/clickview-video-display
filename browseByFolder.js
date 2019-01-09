@@ -5,8 +5,10 @@ $(document).ready(function () {
 
 	$("#byFolderButton").click(function () {
 		$("#byFolderDisplay").css("display", "block");
+		// Hide everything
 		$("#displayTable").css("display", "none");
 		$("#byFolderButton").css("display", "none");
+		$("#searchByTag").css("display", "none");
 		displayFolder(sortedVideos); // Display folders on webpage
 
 		let currentFolderObject = window.sortedVideos; // Stores current folder object;
@@ -14,8 +16,6 @@ $(document).ready(function () {
 		RefreshButtonEventListener(currentFolderObject);
 
 	})
-
-
 });
 
 
@@ -44,8 +44,8 @@ function displayFolder(folder) {
 		$("#displayTable").css("display", "none");
 	}
 	$("#byFolderDisplay").append("<div class='row folder-row'></div>"); // add row to grid of folders
-	for (let attr in folder) {
-		if (folder.hasOwnProperty(attr) && attr != "type" && attr != "content") {
+	for (let attr in folder) { // iterate through JSON attributes
+		if (folder.hasOwnProperty(attr) && attr != "type" && attr != "content") { // add folder to DOM
 			$(".folder-row").append("\
 				<div class='folder-col col'>\
 				  <img class='folderImage' src='folder.jpg' alt='folderImage'>\
@@ -58,7 +58,7 @@ function displayFolder(folder) {
 	RefreshButtonEventListener(folder); // Add event listener again	(as dynamically created elements need event listener)
 }
 
-// Sorts videos by folder, creates new JSON object
+// Sorts videos by folder, creates new JSON object that is a tree
 function sortVideosArray() {
 	let mainObject = {"type": "folder"}; // Object that will hold array of objects
 	// Loop through videos array
@@ -68,13 +68,13 @@ function sortVideosArray() {
 		currObject = mainObject;
 		// Loop through array of folders
 		for (let j = 0; j < folderArray.length; j++) {
-			if (currObject[folderArray[j]] == null) {
+			if (currObject[folderArray[j]] == null) { // if folder does not exist, create it
 				currObject[folderArray[j]] = {};
 			}
-			currObject = currObject[folderArray[j]];
-			currObject["type"] = "folder";
+			currObject = currObject[folderArray[j]]; // reset currObject
+			currObject["type"] = "folder"; // add type
 		}
-		currObject["content"] = videos[i];
+		currObject["content"] = videos[i]; // add content to end of tree node
 	}
 	return mainObject;
 

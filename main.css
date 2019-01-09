@@ -33,3 +33,13 @@
 .folder-col h3 {
 	text-align: center;
 }
+
+/*CSS for searching by tag box*/
+#searchByTag {
+	padding: 50px;
+}
+
+#searchByTag input {
+	width: 75%;
+	display: inline-block;
+}
