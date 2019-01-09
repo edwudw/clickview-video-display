@@ -1,5 +1,35 @@
+
+/*CSS for Main Table that displays videos */
+#displayTable {
+	display: table;
+}
+
 /*Set size of thumbnails in table*/
 .thumbnail {
 	height: 50px;
 	width: 80px;
+}
+
+/*CSS for Folder Display*/
+#byFolderDisplay {
+	padding: 100px;
+	display: none;
+}
+
+/*CSS for columns of grid of folder display*/
+.folder-col {
+	display: block;
+}
+
+/*Set size of folder images*/
+.folder-col img {
+	height: 100px;
+	width: 100px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.folder-col h3 {
+	text-align: center;
 }

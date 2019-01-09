@@ -7,9 +7,11 @@
   <script src="jquery-3.3.1.js"></script>
   <script src="videos.js"></script>
   <script src="displayVideos.js"></script>
+  <script src="browseByFolder.js"></script>
 </head>
 <body>
-  <table class="table">
+	<button id="byFolderButton" type="button" class="btn btn-success">View by Folder</button>
+  <table id="displayTable" class="table">
   	<thead>
   		<tr>
   			<th scope="col">Image</th>
@@ -29,5 +31,8 @@
   		</tr> -->
   	</tbody>
   </table>
+
+  <div id="byFolderDisplay" class="container">
+	</div>
 </body>
 </html>
