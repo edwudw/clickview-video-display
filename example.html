@@ -2,11 +2,32 @@
 <html>
 <head>
   <title>Example</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <script src="jquery-3.3.1.js"></script>
   <script src="videos.js"></script>
+  <script src="displayVideos.js"></script>
 </head>
 <body>
-  <script>
-    console.log(window.videos);
-  </script>
+  <table class="table">
+  	<thead>
+  		<tr>
+  			<th scope="col">Image</th>
+  			<th scope="col">Name</th>
+  			<th scope="col">Description</th>
+  			<th scope="col">Play</th>
+  		</tr>
+  	</thead>
+  	<tbody id="displayTableBody">
+
+<!--   Example of what is added to the table using Javascript and JQuery.		
+			<tr>
+	  		<td><img class="thumbnail" src="http://api-image.clickviewapp.com/v1/thumbnails/1977" alt="Thumbnail"></td>
+	  		<td>Catalyst: Out of Africa</td>
+	  		<td>Prof Vanessa Hayes is searching for the origins of modern society, revealing the bedrock of human genetic diversity. Her work exposes some startling truths about racial inequality in modern medicine.</td>
+	  		<td><button type="button" class="btn btn-success">Play</button>
+  		</tr> -->
+  	</tbody>
+  </table>
 </body>
 </html>

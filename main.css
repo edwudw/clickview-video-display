@@ -1,0 +1,5 @@
+/*Set size of thumbnails in table*/
+.thumbnail {
+	height: 50px;
+	width: 80px;
+}
